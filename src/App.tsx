@@ -5,6 +5,7 @@ import { FirstComponent } from './Component/FirstComponent';
 import {v4} from "uuid"
 import { Todolist } from './Component/Todolist';
 import {CreateTodo} from './Component/CreateTodo';
+import ClearTodo from './Component/ClearTodo';
 
 export interface ITodo {
   id:string,
@@ -20,12 +21,11 @@ function App() {
 
   useEffect(() => {
     window.localStorage.setItem("todos", JSON.stringify(todos))
-    console.log(localStorage)
   }, [todos])
   
   return (
     <div className="App">
-    <CreateTodo setTodos={setTodos} />
+    <CreateTodo setTodos={setTodos} /><ClearTodo setTodos={setTodos}/>
     <Todolist todos={todos} setTodos={setTodos}/>
     </div>
   );
