@@ -1,11 +1,10 @@
-import React from 'react'
-import { SetTodos } from '../App'
+import { SetTodos, SetErrorMessage } from '../App'
 
-const ClearTodo = ({setTodos}:{setTodos:SetTodos}) => {
+const ClearTodo = ({setTodos, setErrorMessage}:{setTodos:SetTodos, setErrorMessage:SetErrorMessage}) => {
     const clearTodo = () => {
         setTodos(() => [])
-        localStorage.clear
-        console.log(localStorage)
+        setErrorMessage("")
+        localStorage.clear()
     }
 
   return (

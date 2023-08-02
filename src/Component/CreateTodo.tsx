@@ -1,13 +1,18 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { v4 } from 'uuid';
-import { SetTodos, Todos } from '../App';
+import { SetTodos, SetErrorMessage } from '../App';
 
-export const CreateTodo = ({setTodos}:{setTodos:SetTodos}) => {
+export const CreateTodo = ({setTodos, setErrorMessage}:{setTodos:SetTodos, setErrorMessage:SetErrorMessage}) => {
     const [name, setName] = useState("");
 
     const createTodo = () => {
-        setTodos(prevState => [...prevState, {id:v4(), name}])
-        setName("")
+      if(name === "") {
+        setErrorMessage("Entrez une tache.")
+        return
+      }
+      setTodos(prevState => [...prevState, {id:v4(), name}])
+      setName("")
+      setErrorMessage("")
       }
   return (
       <>
