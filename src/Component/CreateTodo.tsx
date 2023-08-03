@@ -10,7 +10,7 @@ export const CreateTodo = ({setTodos, setErrorMessage}:{setTodos:SetTodos, setEr
         setErrorMessage("Entrez une tache.")
         return
       }
-      setTodos(prevState => [...prevState, {id:v4(), name}])
+      setTodos(prevState => [...prevState, {id:v4(), name, progress:"À faire"}])
       setName("")
       setErrorMessage("")
       }

@@ -8,6 +8,7 @@ import ErrorMessage from './Component/ErrorMessage';
 export interface ITodo {
   id:string,
   name:string,
+  progress:string
 }
 
 export type Todos = Array<ITodo>
