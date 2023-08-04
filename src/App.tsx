@@ -4,6 +4,7 @@ import { Todolist } from './Component/Todolist';
 import {CreateTodo} from './Component/CreateTodo';
 import ClearTodo from './Component/ClearTodo';
 import ErrorMessage from './Component/ErrorMessage';
+import ClearEndedTasks from './Component/ClearEndedTasks';
 
 export interface ITodo {
   id:string,
@@ -27,7 +28,7 @@ function App() {
   return (
     <div className="App">
     <ErrorMessage message={errorMessage} />
-    <CreateTodo setTodos={setTodos} setErrorMessage={setErrorMessage} /><ClearTodo setTodos={setTodos} setErrorMessage={setErrorMessage}/>
+    <CreateTodo setTodos={setTodos} setErrorMessage={setErrorMessage} /><ClearTodo setTodos={setTodos} setErrorMessage={setErrorMessage}/><ClearEndedTasks todos={todos} setTodos={setTodos}/>
     <Todolist todos={todos} setTodos={setTodos}/>
     </div>
   );

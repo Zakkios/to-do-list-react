@@ -4,29 +4,6 @@ import DeleteTodo from "./DeleteTodo";
 
 export const Todo = ({name, id, progress, todos, setTodos}:ITodo & {todos:Todos, setTodos:SetTodos}) => {
 
-  // const handleProgress = () => {
-  //   const newTodo = todos
-  //   newTodo.forEach(todo => { 
-  //     if (todo.id == id) {
-  //       switch (todo.progress) {
-  //         case "À faire":
-  //           todo.progress = "En cours"
-  //           break;
-  //         case "En cours":
-  //           todo.progress = "Terminée"
-  //           break;
-  //           case "Terminée":
-  //           todo.progress = "À faire"
-  //           break;
-        
-  //         default:
-  //           break;
-  //       }
-  //     }
-  //   });
-  //   setTodos(newTodo)
-  //   console.log(newTodo)
-  // }
 
   const handleProgress = () => {
     const updatedTodos = todos.map(todo => {
